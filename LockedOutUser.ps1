@@ -6,7 +6,17 @@ function LockedoutUser{
     get-aduser $userName -prop lockedout, passwordexpired
 
 }
+function Run_Script{
+do {
+    #Your script logic here
+    LockedoutUser
+    Write-Host " Press 'x' to exit or any other key to continue.`n" -ForegroundColor Green
+    
+    #Wait for user input
+    $input = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
-LockedoutUser
-while($true){LockedoutUser
+} while ($input.Character -ne 'x')
+
+Write-Host "You have exited the script." -ForegroundColor Red
 }
+Run_Script
