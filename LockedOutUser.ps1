@@ -8,7 +8,7 @@ function LockedoutUser{
     catch{
         Write-Host "User not found."
     }
-
+}
 function Run_Script{
     do {
         #Your script logic here
@@ -22,4 +22,5 @@ function Run_Script{
 
     Write-Host "You have exited the script." -ForegroundColor Red
 }
+
 Run_Script
